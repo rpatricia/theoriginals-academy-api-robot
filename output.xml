@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-10-01T22:22:08.994117" rpa="false" schemaversion="5">
+<suite id="s1" name="Post" source="c:\PROJETOS\Theoriginals-Robot-api\test\company\post.robot">
+<test id="s1-t1" name="Funcional Cadastrar company" line="6">
+<kw name="Criar sessão autorizada" owner="login">
+<kw name="Criar sessão" owner="login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-10-01T22:22:09.306679" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-10-01T22:22:09.305679" elapsed="0.005002"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-10-01T22:22:09.314681" level="INFO">Creating Session using : alias=theoriginals, url=https://the-originals.qacoders.dev.br, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=theoriginals</arg>
+<arg>url=https://the-originals.qacoders.dev.br</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-10-01T22:22:09.312680" elapsed="0.002999"/>
+</kw>
+<status status="PASS" start="2024-10-01T22:22:09.303680" elapsed="0.013003"/>
+</kw>
+<kw name="Login com usuário sysadmin" owner="login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-10-01T22:22:09.319680" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<var>${body}</var>
+<arg>mail=sysadmin@qacoders.com</arg>
+<arg>password=1234@Test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-10-01T22:22:09.318681" elapsed="0.002001"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-01T22:22:09.322681" level="INFO">{'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-01T22:22:09.321682" elapsed="0.000999"/>
+</kw>
+<kw name="Criar sessão" owner="login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-10-01T22:22:09.324682" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-10-01T22:22:09.324682" elapsed="0.000999"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-10-01T22:22:09.326681" level="INFO">Creating Session using : alias=theoriginals, url=https://the-originals.qacoders.dev.br, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=theoriginals</arg>
+<arg>url=https://the-originals.qacoders.dev.br</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-10-01T22:22:09.325681" elapsed="0.002002"/>
+</kw>
+<status status="PASS" start="2024-10-01T22:22:09.323682" elapsed="0.005001"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-10-01T22:22:10.721921" level="INFO">POST Request : url=https://the-originals.qacoders.dev.br/api/login 
+ path_url=/api/login 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
+ body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
+ </msg>
+<msg time="2024-10-01T22:22:10.721921" level="INFO">POST Response : url=https://the-originals.qacoders.dev.br/api/login 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Wed, 02 Oct 2024 01:22:07 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization', 'ETag': 'W/"534-bdNpU19nDYJcHT6h3CAAfVFsIqY"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"66db5e75de1c029e7e26620c","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$u811sb1ieCE31N94IgLMxu97ugAR636GWqeG4AaW1pQnaWSkjXdYy","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 06/09/2024, 16:56:37 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"66db5e75de1c029e7e26620d"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU3NWRlMWMwMjllN2UyNjYyMGMiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR1ODExc2IxaWVDRTMxTjk0SWdMTXh1OTd1Z0FSNjM2R1dxZUc0QWFXMXBRbmFXU2tqWGRZeSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU2OjM3IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlNzVkZTFjMDI5ZTdlMjY2MjBkIn1dLCJfX3YiOjAsImlhdCI6MTcyNzgzMjEyNywiZXhwIjoxNzI3OTE4NTI3fQ.2Oj2zu5paxObjuWWzgFe1vSzyj1ZmpAOA_OB6ho81vM"} 
+ </msg>
+<msg time="2024-10-01T22:22:10.722922" level="INFO">C:\Users\Renata\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'the-originals.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-10-01T22:22:10.723925" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=theoriginals</arg>
+<arg>url=/api/login</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-10-01T22:22:09.329681" elapsed="1.394244"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-10-01T22:22:10.726759" level="INFO">${TOKEN} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU3NWRlMWMwMjllN2UyNjYyMGMiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR1ODExc2I...</msg>
+<arg>${TOKEN}</arg>
+<arg>${resposta.json()["token"]}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-10-01T22:22:10.724926" elapsed="0.002809"/>
+</kw>
+<status status="PASS" start="2024-10-01T22:22:09.317682" elapsed="1.410053"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-10-01T22:22:10.728736" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU3NWRlMWMwMjllN2UyNjYyMGMiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWV...</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=${TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-10-01T22:22:10.727735" elapsed="0.001001"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-10-01T22:22:10.729738" level="INFO">Creating Session using : alias=theoriginals, url=https://the-originals.qacoders.dev.br, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=theoriginals</arg>
+<arg>url=https://the-originals.qacoders.dev.br</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-10-01T22:22:10.728736" elapsed="0.001002"/>
+</kw>
+<kw name="headers=${headers}">
+<msg time="2024-10-01T22:22:10.732738" level="FAIL">No keyword with name 'headers=${headers}' found. Did you try using keyword 'RequestsLibrary.HEAD' and forgot to use enough whitespace between keyword and arguments?</msg>
+<status status="FAIL" start="2024-10-01T22:22:10.732738" elapsed="0.004002">No keyword with name 'headers=${headers}' found. Did you try using keyword 'RequestsLibrary.HEAD' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<status status="FAIL" start="2024-10-01T22:22:09.301679" elapsed="1.435061">No keyword with name 'headers=${headers}' found. Did you try using keyword 'RequestsLibrary.HEAD' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<kw name="Criar dados da company" owner="company">
+<status status="NOT RUN" start="2024-10-01T22:22:10.739738" elapsed="0.000000"/>
+</kw>
+<kw name="Cadastrar company" owner="company">
+<status status="NOT RUN" start="2024-10-01T22:22:10.741741" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-10-01T22:22:09.298680" elapsed="1.444061">No keyword with name 'headers=${headers}' found. Did you try using keyword 'RequestsLibrary.HEAD' and forgot to use enough whitespace between keyword and arguments?</status>
+</test>
+<status status="FAIL" start="2024-10-01T22:22:09.007119" elapsed="1.739620"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Post">Post</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
