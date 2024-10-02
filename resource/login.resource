@@ -22,6 +22,6 @@ Login com usuário sysadmin
 Criar sessão autorizada
     Criar sessão
     Login com usuário sysadmin
-    ${headers}    Create Dictionary    accept=application/json    Content-Type=application/json    Authorization=${TOKEN}    
+    ${headers}    Create Dictionary    accept=application/json    Content-Type=application/json    Authorization=${TOKEN}        
     Create Session    alias=theoriginals    url=https://the-originals.qacoders.dev.br    headers=${headers} 
    
