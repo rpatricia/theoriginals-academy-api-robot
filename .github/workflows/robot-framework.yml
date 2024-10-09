@@ -1,6 +1,7 @@
 name: Robot Framework Tests
 
-on: workflow_dispatch:
+on: 
+  workflow_dispatch:
 
 jobs:
   test:
@@ -45,7 +46,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://rpatricia.github.io/robot-test-api/report.html
+      url: https://rpatricia.github.io/theoriginals-academy-api-robot/report.html
 
     steps:
       - name: Setup Pages
